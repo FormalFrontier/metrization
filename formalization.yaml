@@ -1,0 +1,78 @@
+version: v0.4
+project:
+  name: Metrization
+  authors:
+    - Formal Frontier Agents
+  license: Apache-2.0
+  description: >-
+    The Nagata–Smirnov sigma-locally-finite open-basis criterion and its metric
+    converse, and metrizability from a locally finite closed metrizable
+    neighbourhood cover, preserving the given topologies.
+repository:
+  role: substantive-development
+sources:
+  - title: On a necessary and sufficient condition of metrizability
+    authors:
+      - J. Nagata
+    type: article
+    relationship: adapts
+    location: The sigma-locally-finite basis criterion for metrizability.
+  - title: A necessary and sufficient condition for metrizability of a topological space
+    authors:
+      - Yu. M. Smirnov
+    type: article
+    relationship: adapts
+    location: The sigma-locally-finite basis criterion for metrizability.
+  - title: Mathlib
+    authors:
+      - The Mathlib Community
+    id: https://github.com/leanprover-community/mathlib4/tree/83abb3e776bdefcbc447a1e44d0debe4010039e5
+    type: software
+    relationship: adapts
+    license: Apache-2.0
+    location: >-
+      Topological bases, locally finite families, separation and Urysohn's lemma,
+      metric paracompactness, countable products, finite-support Lp metrics and
+      coproduct homeomorphisms.
+related_formalizations:
+  - id: https://github.com/leanprover-community/mathlib4
+    relationship: builds-on
+    note: Uses Mathlib's topological and metric structures and original subtype topologies.
+classification:
+  arxiv:
+    - math.GN
+  msc2020:
+    - 54E35
+automation:
+  methods:
+    - method: agent
+      tool_setup: Lean 4 and Mathlib
+  notes: AI agents contributed to the formalization and documentation.
+status:
+  scope: >-
+    Metrizability from a T3 sigma-locally-finite open basis, the metrizable-space
+    converse, and the locally finite closed metrizable neighbourhood-cover
+    criterion without ambient separation assumptions. Supporting regular-basis
+    and finite-support continuity results, with three coproduct clients.
+  main_results:
+    - declaration: TopologicalSpace.metrizableSpace_of_sigmaLocallyFinite_isTopologicalBasis
+      file: Metrization/LocallyFinite.lean
+    - declaration: TopologicalSpace.exists_sigmaLocallyFinite_isTopologicalBasis
+      file: Metrization/LocallyFinite.lean
+    - declaration: TopologicalSpace.metrizableSpace_of_locallyFinite_isClosed_interior_cover
+      file: Metrization/LocallyFinite.lean
+fidelity:
+  divergences: >-
+    Basis levels and closed-cover index types may be arbitrary, and all results
+    concern the given topology. The closed-cover criterion requires closed pieces
+    whose interiors cover and whose original subtype topologies are metrizable;
+    it does not assume ambient separation. Finite-support continuity uses arbitrary
+    Zero and PseudoMetricSpace coordinate spaces. See the declarations for exact
+    universes and hypotheses.
+review:
+  status: agent-reviewed
+acknowledgements: >-
+  The classical Nagata–Smirnov metrization arguments and Mathlib contributors'
+  formalizations underlie this library. The Lean modules and coproduct clients
+  reuse earlier generic metrization formalizations by Formal Frontier Agents;
+  their mathematical references and author notices are retained in the modules.

@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "mode": "strict",
+  "projects": [
+    {
+      "path": ".",
+      "targets": [
+        "Metrization",
+        "Metrization.Finsupp",
+        "Metrization.RegularBasis",
+        "Metrization.LocallyFinite",
+        "MetrizationTest",
+        "MetrizationTest.LocallyFinite"
+      ],
+      "source_dir": ".",
+      "exclude": {}
+    }
+  ],
+  "docs_only_paths": [
+    "README.md"
+  ]
+}

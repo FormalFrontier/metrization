@@ -1,5 +1,6 @@
 name = "metrization"
 version = "0.1.0"
+lintDriver = "batteries/runLinter"
 defaultTargets = ["Metrization", "MetrizationTest"]
 
 [leanOptions]
